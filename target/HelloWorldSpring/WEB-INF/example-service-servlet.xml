@@ -9,6 +9,8 @@
        http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
+	<context:component-scan base-package="com.mozido.example.endpoints"/>
+
 	<sws:annotation-driven/>
 
 	<sws:dynamic-wsdl id="hello" portTypeName="hello"
