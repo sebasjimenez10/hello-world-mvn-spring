@@ -1,5 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mozido.examples</groupId>
 	<artifactId>HelloWorldSpring</artifactId>
@@ -7,6 +8,33 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>HelloWorldSpring Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<build>
+		<finalName>HelloWorldSpring</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.5</version>
+
+				<executions>
+					<execution>
+						<id>hello</id>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<configuration>
+							<schemaDirectory>src/main/resources/</schemaDirectory>
+							<schemaFiles>hello.xsd</schemaFiles>
+							<packageName>com.mozido.examples.generated.helloitems</packageName>
+							<staleFile>${project.build.directory}/jaxb2/.getProfileItemsXjcStaleFlag</staleFile>
+							<clearOutputDir>false</clearOutputDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 	<repositories>
 		<repository>
@@ -104,8 +132,4 @@
 			<version>1.2.16</version>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<finalName>HelloWorldSpring</finalName>
-	</build>
 </project>

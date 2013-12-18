@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/hello"
+	xmlns:tns="http://www.example.org/hello" elementFormDefault="qualified">
+	<element name="helloRequest">
+		<complexType>
+			<sequence>
+				<element name="message" minOccurs="1" maxOccurs="1" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="helloResponse">
+		<complexType>
+			<sequence>
+				<element name="responseMessage" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>
