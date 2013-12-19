@@ -19,7 +19,7 @@ public class HelloEndpoint {
 		System.out.println("Received message: " + request.getMessage());
 
 		HelloResponse response = new HelloResponse();
-		response.setResponseMessage("Hello, you message was: "
+		response.setResponseMessage("Hello, your message was: "
 				+ request.getMessage());
 
 		return response;
